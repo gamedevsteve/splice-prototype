@@ -1,0 +1,104 @@
+.character-select {
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.character-pane {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    align-items: center;
+    padding:1rem;
+
+    .character-portrait {
+        width: 100%;
+        height: 90%;
+
+        .frame {
+            height: 100%;
+        }
+    }
+}
+
+.selection-wrapper {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .stat-block {
+        width: 100%;
+        display: flex;
+        height: 40%;
+        padding: 1.5rem 1.5rem 0;
+
+        .stat {
+            width: 25%;
+            padding: 0 5px;
+            height: 100%;
+            display: block;
+
+            .stat-bar {
+                height: calc(90% - 1.5rem);
+                position: relative;
+
+                .stat-bar-inner {
+                    transition: $transition-speed;
+                    background-color: $color-tertiary;
+                    height: 0;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            .stat-key {
+                height: calc(5% + 1.5rem);
+                text-align: center;
+            }
+        }
+    }
+
+    .character-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem 0;
+
+        .character {
+            display: flex;
+            width: 33.3333%;
+            height: 12rem;
+            padding: 5px;
+            flex: 0 0 33.3333%;
+            justify-content: center;
+
+            .character-frame {
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: flex-end;
+                display: flex;
+                background-color: transparent;
+                transition: $transition-speed;
+                
+                .name {
+                    transition: $transition-speed;
+                }
+            
+                &:hover {
+                    cursor: pointer;
+                    border-color: $color-tertiary;
+
+                    .name {
+                        color: $color-tertiary;
+                    }
+                }
+            }
+
+        }
+    }
+}

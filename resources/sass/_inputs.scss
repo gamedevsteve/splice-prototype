@@ -1,0 +1,48 @@
+a {
+    text-decoration: none !important;
+}
+
+.theme-button {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    padding:3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary-light;
+    width: 10rem;
+    transform: rotateZ(90deg);
+    position: relative;
+    transition: $transition-speed;
+
+    .text {
+        transform: rotateZ(-90deg);
+        color: $color-secondary-light;
+        z-index: 99;
+        transition: $transition-speed;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        padding-bottom: 3rem;
+        background-color: $color-primary;
+        width: 95%;
+        height: 95%;
+        display: block;
+        position: absolute;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        transition: $transition-speed;
+    }
+
+    &:hover {
+        background-color: $color-secondary-light;
+
+        .text {
+            color: $color-primary;
+        }
+
+        &:after {
+            background-color: $color-secondary-light;
+        }
+    }
+}

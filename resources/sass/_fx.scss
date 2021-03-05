@@ -1,0 +1,37 @@
+.glitch-container {
+    position: relative;
+}
+
+.glitch {
+  position: relative;
+  font-size: 9vw;
+}
+
+@keyframes pulse {
+  from{
+    text-shadow: 0 0 150px $color-tertiary;
+  }
+  to{
+    text-shadow: 0 0 200px $color-tertiary;
+  }
+}
+
+.scanlines {
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+
+.glow {
+  @extend .glitch;
+  text-shadow: 0 0 100px $color-tertiary;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
